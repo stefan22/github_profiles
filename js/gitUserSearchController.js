@@ -1,8 +1,8 @@
 githubUserSearch.controller('GitUserSearchController', ['Search', function(Search) {
   var self = this;
-  var resultArray = []
 
   self.doSearch = function() {
+    var resultArray = []
     Search.query(self.searchTerm)
       .then(function(response) {
         response.data.items.forEach(function(item) {

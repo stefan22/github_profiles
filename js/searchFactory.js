@@ -1,7 +1,6 @@
 githubUserSearch.factory('Search', ['$http', function($http) {
 
   var queryUrl = 'https://api.github.com/search/users';
-  var accessToken = ''; // acquire from env_variables
 
   return {
     query: function(searchTerm) {
