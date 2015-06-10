@@ -20,6 +20,7 @@ Next Steps:
 - Add a label to let the user know what they have just searched for.
 - Do you have a bug where some of the avatars are blown up really huge?
 - Complete versions 1-5 as described in below link.
+- Remedy: Karma tests not working owing to inclusion of accessToken.
 
 Links:
 -------
