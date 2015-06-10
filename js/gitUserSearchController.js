@@ -3,10 +3,10 @@ githubUserSearch.controller('GitUserSearchController', ['Search', function(Searc
 
   self.doSearch = function() {
     var resultArray = []
-    Search.query(self.searchTerm)
+    Search.query1(self.searchTerm)
       .then(function(response) {
         response.data.items.forEach(function(item) {
-          Search.result(item.login)
+          Search.query2(item.login)
           .then(function(response) {
             resultArray.push(response.data)
             self.searchResult = resultArray;
