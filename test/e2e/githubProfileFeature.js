@@ -14,6 +14,22 @@ describe('Github Profile finder', function() {
   it('finds profiles', function() {
     searchBox.sendKeys('spike01');
     searchButton.click();
-    expect(element(by.binding('user.login')).getText()).toEqual('spike01');
+    var profiles = element.all(by.repeater('user in searchCtrl.searchResult'));
+    expect(profiles.get(0).getText()).toContain('spike01');
   });
+
+  it('finds last profile of results', function() {
+    searchBox.sendKeys('andygou');
+    searchButton.click();
+    var profiles = element.all(by.repeater('user in searchCtrl.searchResult'));
+    expect(profiles.last().getText()).toContain('andygould');
+  });
+
+  it('counts the number of results', function() {
+    searchBox.sendKeys('andygou');
+    searchButton.click();
+    var profiles = element.all(by.repeater('user in searchCtrl.searchResult'));
+    expect(profiles.count()).toEqual(5);
+  });
+
 });

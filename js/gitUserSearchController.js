@@ -10,6 +10,7 @@ githubUserSearch.controller('GitUserSearchController', ['Search', function(Searc
           .then(function(response) {
             resultArray.push(response.data)
             self.searchResult = resultArray;
+            console.log(self.searchResult)
           });
         });
       })
